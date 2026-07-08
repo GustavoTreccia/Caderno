@@ -5,18 +5,18 @@ package pacoteManeiro;
 	Uma coisa que é (ou deveria ser) analisada em Code Review é a possibilidade de NullPointers
 	
 	Afinal, o que são Null Checkers? 
-	Em curtas palavras, Null Checkers são validações, ponto.
-	Que você precisa ter em seu código a fim de não causar o lendário (e opressivo) NullPointeException.
+	Em curtas palavras, Null Checkers são validações de prevenção de valores nulos que você precisa ter em seu código a 
+	fim de não causar NullPointerException.
 	
 	Imagine que você tem uma caixa(sua entidade), antes de utilizar o conteúdo da sua caixa, você precisa
-	verificar se sua caixa está vazia!
+	verificar se sua caixa está vazia.
 	
-	Então, no código a seguir, será demonstrado um exemplo de NullCheckers
-	
-	Por que usar Null Checkers? Se classes ou métodos dependem da resposta de outras classes ou métodos
+	Então, por que usar Null Checkers? Se classes ou métodos dependem da resposta de outras classes ou métodos
 	você deve ter alguma validação ou preenchimento adequado. Neste caso dos NullCheckers, você pode 
 	causar um impacto direto no funcionamento da sua aplicação ou de ambientes que dependam do 
 	funcionamento adequado do seu código.
+	
+	No código a seguir, será demonstrado um exemplo de NullCheckers
 	
  * */
 
@@ -30,16 +30,16 @@ public class NullCheckers {
 		
 		classe.setIdade(25);
 		classe.setNome("Fulano");
-		classe.setTaVivo(true); //eu acho
+		classe.setTaVivo(true);
 	}
 	
 	//criei um método que não vai chamar o setaValores logo de começo
 	public static void vouDarNulo() {
 		
 		//perceba que aqui eu não estou fazendo validação nenhuma
-		if(classe.getIdade() == 10) { 
+		if(classe.getIdade() == 25) { 
 			
-			//logo, isso aqui nem vai aparecer na tela, mas sim, um NullPointerException
+			//logo, esse sysout não vai aparecer na tela, mas sim, um NullPointerException
 			System.out.println("Isso aqui vai dar nulo"); 
 			
 			//Exception in thread "main" java.lang.NullPointerException: 
@@ -48,14 +48,14 @@ public class NullCheckers {
 		}
 	}
 	
-	//criei um método que irá chamar o setaValores
+	//criei um novo método que irá chamar o setaValores
 	public static void naoVouDarNulo() {
 		
 		//dei set nos valores
 		setaValoresParaAClasse();
 		
 		//é feita uma validação para ver se getIdade não está nulo e nem zero
-		if(classe.getIdade() != null && classe.getIdade() != 0) {
+		if(classe.getIdade() != null && classe.getIdade() != 0 && classe.getIdade() == 25) {
 			
 			//inevitavelmente vai passar e printar em tela.
 			System.out.println("Isso aqui vai funcionar");
@@ -69,7 +69,7 @@ public class NullCheckers {
 		
 		if(classe.getIdade() != null) {
 			//não vai entrar no if e printar em tela.
-			System.out.println("Isso aqui vai funcionar");
+			System.out.println("Isso aqui vai funcionar?");
 		}
 		
 		if(classe.getIdade() == null) {

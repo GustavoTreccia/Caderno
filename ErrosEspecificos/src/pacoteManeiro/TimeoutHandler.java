@@ -28,7 +28,7 @@ import java.util.concurrent.TimeoutException;
 	Recuperação: Garante tentativas automáticas pós timeout;
 	Performance [IMPORTANTE]: Garante liberação de recursos que estavam presos em operações lentas
 	
-	Como um bom back-end, você precisa sempre ter um plano B, ainda mais pensando em  aplicações WEB 
+	Como um bom back-end, você precisa sempre ter um plano B, ainda mais pensando em aplicações WEB 
 	onde precisam ser dinâmicas e rápidas.
 	
 	Neste código a seguir utilizaremos o ExecutorService do Java para analisar duas situações:
