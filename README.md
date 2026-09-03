@@ -8,3 +8,5 @@ Então, sinta-se a vontade para ver o que tem no caderno
 Aliás, o objetivo é fazer um commit por dia no caderno, salve dias específicos
 
 (Mais para frente vou fazer um README en-us e um LEIAME pt-br, só aguardar)
+
+27/08/2026 - Na verdade foi feito um commitão gigante para vários arquivos no repositório, isso inclui estudos e GraphQL e um módulo de localização.
